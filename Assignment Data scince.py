@@ -251,9 +251,6 @@ predicted_for_years = [2030, 2035, 2040,2045,2050]
 # Predict values for the future years using the fitted model for the entire dataset
 predicted_values = fitting_result.eval(x=np.array(predicted_for_years))
 
-# Display the predicted values for the entire dataset
-for year, value in zip(predicted_for_years, predicted_values):
-    print(f"Predictions {value:.2f}")
 
 # Filter data for China
 
