@@ -9,6 +9,15 @@ import seaborn as sns
 from lmfit import Model
 import matplotlib.font_manager as fm
 
+
+"""
+gihub link
+https://github.com/tayyabjamil/Clustring_Fitting_assignment
+
+"""
+"""
+function to read data
+"""
 def read_clean_data(file,columns):
    
     # Read the data from the CSV file
@@ -18,7 +27,9 @@ def read_clean_data(file,columns):
     data[columns] = mean_imputer.fit_transform(data[columns])
     return data 
 
-
+"""
+fitting function for exponential growth
+"""
 def fit_exponential_growth_model(time_points, actual_values):
 
     # Define the exponential growth model function
@@ -33,9 +44,13 @@ def fit_exponential_growth_model(time_points, actual_values):
     fitting_result = model.fit(actual_values, x=time_points, params=initial_params)
 
     return fitting_result
-
+"""
+Scatter plot showing fitting function results with exponential growth
+"""
 
 def plot_curve_fit_with_confidence_interval(time_points, actual_values, fitting_result):
+
+
 
     # Set custom font to a system font
     sns.set(style="whitegrid", font_scale=1.2)
@@ -71,6 +86,10 @@ def plot_curve_fit_with_confidence_interval(time_points, actual_values, fitting_
 
 # Show the plot
     plt.show()
+    
+"""
+scatter plot to show k mean clustring
+"""
 def scatter_plot_countries_gdp_foreign_investment(data, cluster_centers):
     plt.figure(figsize=(12, 8))
 
@@ -116,6 +135,10 @@ def scatter_plot_countries_gdp_foreign_investment(data, cluster_centers):
 
     # Display the custom plot
     plt.show()
+
+"""
+over time line graph for foregin direct investment
+"""
 def plot__emissions_over_time(time_points, green_house_data, predicted_for_years, predicted_values):
   
     # Set custom font to a system font
